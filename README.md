@@ -112,6 +112,11 @@ Content-Type: application/json
    "quantity" : "134"
 }
 
+##Delete a product resource
+
+DELETE http://localhost:8005/delete/7
+
+## http://localhost:8005/welcome  //this Method are called when shopping service controller failed
 RESPONSE: HTTP 204 (No Content)
 ```
 ### To view postman 2 API docs
