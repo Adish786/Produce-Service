@@ -1,18 +1,17 @@
 package com.product.service;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.product.model.Product;
 import com.product.repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class ProductService {
-	
+
     @Autowired
     private ProductRepository repository;
 
@@ -42,48 +41,47 @@ public class ProductService {
     }
 
     public Product updateProduct(Product product) {
-    	Product outProduct = null;
+        Product outProduct = null;
 
-    	if(product.getCompany() != null && product.getName() != null) {
+        if (product.getCompany() != null && product.getName() != null) {
             Product existingProduct = repository.findById(product.getId()).orElse(null);
             existingProduct.setName(product.getName());
             existingProduct.setCompany(product.getCompany());
-            outProduct =  repository.save(existingProduct);
-    	}
-        else if(product.getName()!=null) {
-            Product existingProduct = repository.findById(product.getId()).orElse(null);
-            existingProduct.setName(product.getName());
             outProduct = repository.save(existingProduct);
-        }
-        else if(product.getCompany() != null) {
-            Product existingProduct = repository.findById(product.getId()).orElse(null);
-            existingProduct.setCompany(product.getCompany());
-            outProduct = repository.save(existingProduct);
-        }
-    	else if(product.getQuantity() != 0 && product.getPrice() != 0.0) {
+        } else if (product.getName() != null && product.getQuantity() > 0) {
             Product existingProduct = repository.findById(product.getId()).orElse(null);
             existingProduct.setQuantity(product.getQuantity());
-            existingProduct.setPrice(product.getPrice());
+            existingProduct.setName(product.getName());
             outProduct = repository.save(existingProduct);
-    	}
-        else if(product.getQuantity() != 0 && product.getCompany() != null) {
+        }else if (product.getQuantity() != 0 && product.getCompany() != null) {
             Product existingProduct = repository.findById(product.getId()).orElse(null);
             existingProduct.setQuantity(product.getQuantity());
             existingProduct.setCompany(product.getCompany());
             outProduct = repository.save(existingProduct);
-        }
-        else if(product.getQuantity() != 0) {
+        } else if (product.getName() != null) {
             Product existingProduct = repository.findById(product.getId()).orElse(null);
-            existingProduct.setQuantity(product.getQuantity());;
+            existingProduct.setName(product.getName());
             outProduct = repository.save(existingProduct);
-        }
-        else if(product.getPrice() != 0.0) {
+        } else if (product.getCompany() != null) {
+            Product existingProduct = repository.findById(product.getId()).orElse(null);
+            existingProduct.setCompany(product.getCompany());
+            outProduct = repository.save(existingProduct);
+        } else if (product.getQuantity() != 0 && product.getPrice() != 0.0) {
+            Product existingProduct = repository.findById(product.getId()).orElse(null);
+            existingProduct.setQuantity(product.getQuantity());
+            existingProduct.setPrice(product.getPrice());
+            outProduct = repository.save(existingProduct);
+        }  else if (product.getQuantity() != 0) {
+            Product existingProduct = repository.findById(product.getId()).orElse(null);
+            existingProduct.setQuantity(product.getQuantity());
+            ;
+            outProduct = repository.save(existingProduct);
+        } else if (product.getPrice() != 0.0) {
             Product existingProduct = repository.findById(product.getId()).orElse(null);
             existingProduct.setPrice(product.getPrice());
             outProduct = repository.save(existingProduct);
         }
-    	return outProduct;
+        return outProduct;
     }
-
 
 }
