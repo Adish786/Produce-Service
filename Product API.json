@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "3a528ca5-59d6-4111-b3d0-c575d02b94bb",
+		"_postman_id": "03a2d890-4256-4d63-8ae0-5580cc9b598f",
 		"name": "Product API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9894690"
 	},
 	"item": [
 		{
@@ -30,7 +31,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8005/productById/1",
+					"raw": "http://localhost:8005/productById/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -38,7 +39,7 @@
 					"port": "8005",
 					"path": [
 						"productById",
-						"1"
+						"3"
 					]
 				}
 			},
@@ -50,7 +51,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8005/product/Alisher",
+					"raw": "http://localhost:8005/product/Rohit",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +59,7 @@
 					"port": "8005",
 					"path": [
 						"product",
-						"Alisher"
+						"Rohit"
 					]
 				}
 			},
@@ -71,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \"name\" : \"Ansari\",\r\n   \"price\" : \"10\",\r\n   \"quantity\" : \"150\"\r\n}\r\n",
+					"raw": "{\r\n   \"name\" : \"Ansari\",\r\n   \"company\":\"Tech Mahindra\",\r\n   \"price\" : \"10\",\r\n   \"quantity\" : \"150\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,7 +100,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n   \"name\" : \"Rohit\",\r\n   \"price\" : \"10\",\r\n   \"quantity\" : \"150\"\r\n},\r\n{\r\n   \"name\" : \"Kumar\",\r\n   \"price\" : \"12\",\r\n   \"quantity\" : \"134\"\r\n}\r\n\r\n]",
+					"raw": "[\r\n    {\r\n   \"name\" : \"Rohit\",\r\n   \"company\":\"Tech Mahindra\",\r\n   \"price\" : \"10\",\r\n   \"quantity\" : \"150\"\r\n},\r\n{\r\n   \"name\" : \"Kumar\",\r\n   \"company\":\"Tech Mahindra\",\r\n   \"price\" : \"12\",\r\n   \"quantity\" : \"134\"\r\n}\r\n\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -127,7 +128,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\" : \"1\",\r\n   \"name\" : \"Alisher\",\r\n   \"price\" : \"12\",\r\n   \"quantity\" : \"134\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Alisher\",\r\n    \"company\": \"Tech Mahindra\",\r\n    \"price\": \"12\",\r\n    \"quantity\": \"134\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -135,14 +136,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8005/update",
+					"raw": "http://localhost:8005/update/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8005",
 					"path": [
-						"update"
+						"update",
+						"6"
 					]
 				}
 			},
