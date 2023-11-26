@@ -62,7 +62,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-   "name" : "Adish",
+   "name" : "Abcd",
    "price" : "10",
    "quantity" : "150"
 }
@@ -73,7 +73,7 @@ Content-Type: application/json
 
 [
     {
-   "name" : "Rohit",
+   "name" : "efgh",
    "price" : "10",
    "quantity" : "150"
 },
@@ -107,7 +107,7 @@ Content-Type: application/json
 
 {
     "id" : "1",
-   "name" : "Alisher",
+   "name" : "Al",
    "price" : "12",
    "quantity" : "134"
 }
